@@ -1,0 +1,27 @@
+<div *ngIf="lista.length !=0" class="container">
+    <div class="col-md-12">
+        <table class="table">
+            <tr>
+                <th>ID</th>
+                <th>nome</th>
+                <th>cognome</th>
+                <th>eta</th>
+                <th>codiceFiscale</th>
+                <th></th>
+                <th></th>
+
+            </tr>
+            <tr *ngFor="let utente of lista; let i = index">
+                <td>{{ i }}</td>
+                <td>{{ utente.nome }}</td>
+                <td>{{ utente.cognome }}</td>
+                <td>{{ utente.eta }}</td>
+                <td>{{ utente.codiceFiscale}}</td>
+                <td><button (click)="removeUtente(i)" pButton type="button" label="DELETE" class="ui-button-danger"></button> &nbsp; &nbsp; &nbsp;
+                    <button (click)="modify(utente.id)" pButton type="button" label="MODIFICA" class="ui-button-raised ui-button-warning"></button></td>
+            </tr>
+
+        </table>
+
+    </div>
+</div>
